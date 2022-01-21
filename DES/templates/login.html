@@ -37,16 +37,19 @@ Login
                 <div class=" bg-danger gradient-custom-2">
                     <div class="p-1">
                         <h6>Login to your account</h6>
+                        {% for m in messages %}]
+                          <b><font class="text-warning">{{m}}</font></b>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="form-outline mb-4"><br>
-                  <input type="email" id="form2Example11" class="form-control" placeholder="Phone number or email address"/>
-                  <label class="form-label" name="uname" for="form2Example11">Username</label>
+                  <input type="text" id="form2Example11"name="uname" class="form-control" placeholder="Phone number or email address"/>
+                  <label class="form-label"  for="form2Example11">Username</label>
                 </div>
         
                 <div class="form-outline mb-4">
-                  <input type="password" id="form2Example22" class="form-control" placeholder="Password"/>
-                  <label class="form-label" name="pass" for="form2Example22" >Password</label>
+                  <input type="password"name="pass" id="form2Example22" class="form-control" placeholder="Password"/>
+                  <label class="form-label"  for="form2Example22" >Password</label>
                 </div>
         
                 <div class="text-center pt-1 mb-5 pb-1">
