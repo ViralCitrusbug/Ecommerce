@@ -9,7 +9,7 @@ from django.contrib.auth.hashers import make_password,check_password
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import authenticate
-from DES.models import product,contact
+from DES.models import product,contact,profile
 # Create your views here.
 
 
@@ -93,4 +93,11 @@ def register(request):
 def logout(r):
     auth.logout(r)
     return redirect('login')
+
+def profile(request):
+    user = User.objects.filter(username = 'aman86').first()
+    c = {
+        "user" : user
+    }
+    return render(request, 'profile.html',c)
     

@@ -1,7 +1,6 @@
-from audioop import maxpp
 from distutils.command.upload import upload
-from pyexpat import model
-from statistics import mode
+from email.policy import default
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -23,3 +22,11 @@ class contact(models.Model):
 
     def _str_(self):
         return self.name
+
+
+class profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(default = "default.jpg", upload_to = "DES/files")
+
+    def __str__(self):
+        return f'{self.user.username} Profile'

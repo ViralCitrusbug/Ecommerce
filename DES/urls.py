@@ -31,7 +31,8 @@ urlpatterns =[
     path('thank',views.thank,name="thank"),
     path('forgot',views.forgot,name="forgot"),
     path('login', views.login, name="login"),
-    path('logout',views.logout, name="logout")
+    path('logout',views.logout, name="logout"),
+    path('profile',views.profile, name="profile")
     
     
 
