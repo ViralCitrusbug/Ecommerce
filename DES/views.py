@@ -1,9 +1,12 @@
+from operator import ipow
 from unicodedata import category
+from webbrowser import get
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.http import HttpResponse, request
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.contrib.auth import authenticate
 from DES.models import product,contact
 # Create your views here.
 
@@ -53,6 +56,14 @@ def forgot(r):
     return render(r, 'forget.html')
 
 def login(r):
+    if r.method == "POST":
+        name = r.POST.get('uname')
+        passw = r.POST.get('pass')
+        user = authenticate(username = name , password = passw)
+        if user is None:
+            messages.warning(r,"Incorrect Username or password !")
+        print(r.user.is_authenticated)
+        return redirect('home')
     return render(r, 'login.html')
 
 def register(request):
@@ -73,3 +84,8 @@ def register(request):
             messages.info(request,"Password Doesn't match")
             return redirect('register')
     return render(request, "register.html")
+
+def logout(r):
+    auth.logout(r)
+    return redirect('login')
+    
