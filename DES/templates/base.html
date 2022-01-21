@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+  
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +15,18 @@
         {% endblock %}
     </title>
     <style>
+        a{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        a:hover{
+          color: aqua;
+        }
+        h3:hover{
+          color: aqua;
+        }
+        h4:hover{
+          color: greenyellow;
+        }
         .gradient-custom-2 {
           /* fallback for old browsers */
           background: #fccb90;
@@ -52,36 +65,41 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
+            
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto text-center mb-2 mb-lg-0">
+             <!-- <div class="row"> -->
+               <div class="col-5"></div>
+               <div class="col-3"><b><font class="text-ligtht" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><h3>{{request.user.first_name}}</h3></font></b></div>
+               <div class="col "> <ul class="navbar-nav ms-auto text-center mb-2 mb-lg-0">
                 
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/">Home</a>
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/"><h4>Home</h4></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="add">Add product</a>
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="add"><h4>Add product</h4></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="aboutus">about us</a>
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="aboutus"><h4>about us</h4></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="contact">contact us</a>
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="contact"><h4>contact us</h4></a>
                 </li>
                 {% if not request.user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="signin">Sign in</a>
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="signin"><h4>Sign in</h4></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="login">login</a>
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="login"><h4>login</h4></a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="logout">Logout</a>
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="logout"><h4>Logout</h4></a>
                 </li>
                 {% endif %}
 
 
-              </ul >
+              </ul ></div>
+             <!-- </div> -->
               
             </div>
           </div> 
