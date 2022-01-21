@@ -74,7 +74,6 @@ def login(r):
 
 def register(request):
     if request.method == "POST":
-        
         first = request.POST.get('fname')
         last = request.POST.get('lname')
         uname = request.POST.get('uname')
