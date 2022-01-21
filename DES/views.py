@@ -62,7 +62,8 @@ def login(r):
         user = authenticate(username = name , password = passw)
         if user is None:
             messages.warning(r,"Incorrect Username or password !")
-        print(r.user.is_authenticated)
+        auth.login(r, user)
+        messages.success(r, "You are logged in")
         return redirect('home')
     return render(r, 'login.html')
 

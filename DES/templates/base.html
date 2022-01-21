@@ -54,6 +54,7 @@
             </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto text-center mb-2 mb-lg-0">
+                
                 <li class="nav-item">
                   <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/">Home</a>
                 </li>
@@ -66,15 +67,21 @@
                 <li class="nav-item">
                   <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="contact">contact us</a>
                 </li>
-               
-               <li class="nav-item">
-                <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="signin">Sign in</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="login">login</a>
-              </li> 
-               
-              </ul>
+                {% if not request.user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="signin">Sign in</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="login">login</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="logout">Logout</a>
+                </li>
+                {% endif %}
+
+
+              </ul >
               
             </div>
           </div> 
