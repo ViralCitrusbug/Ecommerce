@@ -1,3 +1,4 @@
+from math import ceil
 from operator import ipow
 from unicodedata import category
 from webbrowser import get
@@ -14,10 +15,13 @@ from DES.models import product,contact
 
 def Home(request):
     p = product.objects.all()
-    u = User.objects.all()
+    n = len(p)
+    nSlides = n//4 + ceil(n/4) - (n//4)
     c = {
         "product" : p,
-        "user" : u
+        "len" : n,
+        "no_of_slide" : nSlides,
+        "range" : range(nSlides)
     }
     return render(request,'home.html',c)
 
