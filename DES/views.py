@@ -4,6 +4,7 @@ from webbrowser import get
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.http import HttpResponse, request
+from django.contrib.auth.hashers import make_password,check_password
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth import authenticate
@@ -78,7 +79,7 @@ def register(request):
         email = request.POST.get('email')
         # print(first,last,username,password1,password2,email)
         if password1 == password2 :
-            user = User.objects.create(first_name = first , last_name = last , email = email , password = password1 , username = uname)
+            user = User.objects.create(first_name = first , last_name = last , email = email , password = make_password(password1) , username = uname)
             user.save()
             return redirect('login')    
         else:
