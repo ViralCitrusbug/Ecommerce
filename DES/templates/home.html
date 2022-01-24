@@ -1,40 +1,5 @@
 {% extends 'base.html' %}
-{% block css %}
-a{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-a:hover{
-  color: aqua;
-}
-h3:hover{
-  color: aqua;
-}
-h4:hover{
-  color: rgb(0, 255, 0);
-}
-.gradient-custom-2 {
-  /* fallback for old browsers */
-  background: #fccb90;
 
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
-}
-
-@media (min-width: 768px) {
-.gradient-form {
-height: 100vh !important;
-}
-}
-@media (min-width: 769px) {
-.gradient-custom-2 {
-  border-top-right-radius: .3rem;
-  border-bottom-right-radius: .3rem;
-}
-}
-{% endblock %}
 {% block body %}
 <div class="container">
   <div class="row">
@@ -52,9 +17,9 @@ height: 100vh !important;
         </ul>
         <div class="card-body">
           <div class="row">
-            <div class="col-6"><a href="checkout/{{i.Product_id}}" style="width: 100%;" class="btn btn-danger gradient-custom-2">Checkout</a>
+            <div class="col-6"><a href="checkout/{{i.Product_id}}" style="width: 100%;" class="btn btn-outline-dark">Checkout</a>
             </div>
-            <div class="col"><a href="#" style="width: 100%;" class="gradient-custom-2 btn btn-danger">buy</a>
+            <div class="col"><a href="#" style="width: 100%;" class="btn btn-outline-dark">buy</a>
             </div>
           </div>
         </div>
