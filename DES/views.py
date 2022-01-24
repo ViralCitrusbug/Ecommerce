@@ -116,7 +116,11 @@ def productView(request, ids) :
 
 def checkout(request, p_id):
     p =product.objects.filter(Product_id = p_id).first()
+    price = p.product_price
+    discount = p.product_disc
+    total = price - (price * (discount/100))
     c = {
-        "product" : p
+        "product" : p,
+        "amount" : total
     }
     return render(request, 'checkout.html',c)
