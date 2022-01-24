@@ -52,7 +52,12 @@ def add(request):
         prod.save()
     return render(request,'add.html')
 def thank(r):
-    return render(r, 'thank.html')
+    action = r.GET.get('action')
+    print(action)
+    c = {
+        "action" : action
+    }
+    return render(r, 'thank.html', c)
 
 def forgot(r):
     if r.method == "POST":

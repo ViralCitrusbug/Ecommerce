@@ -28,8 +28,7 @@
           color: aqua;
         }
         h4:hover{
-          color: rgb(18, 16, 143);
-          font-size: 160%;
+          color: rgb(16, 143, 27);
         }
         .gradient-custom-2 {
           /* fallback for old browsers */
@@ -63,9 +62,9 @@
     <section class="header">
       
       <body>
-        <nav class="navbar navbar-expand-lg navbar-danger bg-danger gradient-custom-2 "> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark  "> 
           <div class="container-fluid">
-            <a class="navbar-brand text-dark btn rounded-pill" href="/"> <h4>Navbar</h4></a>
+            <a class="navbar-brand text-light btn rounded-pill" href="/"> <h4>Navbar</h4></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -73,31 +72,35 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <!-- <div class="row"> -->
                <div class="col-3"></div>
-             <div class="col-3"> <a class=" btn rounded-pill" href="/profile/{{request.user.username}}"> <b><font class="text-ligtht" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><h4 style="text-transform: uppercase;" >{{request.user.first_name}}</h4></font></b></a></div>
+              {% if request.user.is_authenticated %}
+              <div class="col-3"> <a class=" btn rounded-pill text-light" href="/profile/{{request.user.username}}"> <b><font class="text-ligtht" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><h4 style="text-transform: uppercase;" >{{request.user.first_name}}</h4></font></b></a></div>
+              {% else %}
+              <div class="col-3"> <a class=" btn rounded-pill text-light" href="/profile/{{request.user.username}}"> <b><font class="text-ligtht" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><h4 style="text-transform: uppercase;" >Anonymous User</h4></font></b></a></div>
+              {% endif %}
                <div class="col"> <ul class="navbar-nav ms-auto text-center mb-2 mb-lg-0">
                 
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/"><h4>Home</h4></a>
+                  <a class="nav-link active text-light" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/"><h4>Home</h4></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/add"><h4>Add product</h4></a>
+                  <a class="nav-link active text-light" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/add"><h4>Add product</h4></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/aboutus"><h4>about us</h4></a>
+                  <a class="nav-link active text-light" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/aboutus"><h4>about us</h4></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/contact"><h4>contact us</h4></a>
+                  <a class="nav-link active text-light" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/contact"><h4>contact us</h4></a>
                 </li>
                 {% if not request.user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/signin"><h4>Sign in</h4></a>
+                  <a class="nav-link active text-light" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/signin"><h4>Sign in</h4></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/login"><h4>login</h4></a>
+                  <a class="nav-link active text-light" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/login"><h4>login</h4></a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                  <a class="nav-link active text-dark" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/logout"><h4>Logout</h4></a>
+                  <a class="nav-link active text-light" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" aria-current="page" href="/logout"><h4>Logout</h4></a>
                 </li>
                 {% endif %}
 
@@ -115,8 +118,8 @@
        
     {% endblock %} 
     
-      
-    <footer class=" bg-primary">
+      <br>
+    <footer class=" bg-dark">
       <h1 class="text-light">This is footer</h1>
       <br><br><br><br><br><br><br><br>
     </footer>

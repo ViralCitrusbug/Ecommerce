@@ -3,7 +3,11 @@
     Thanks
 {% endblock %}
 {% block body %}
-    <h1 class="text-success">Thank you for contacting us...</h1>
-    {{info}}
-    <h2 class="text-success">We will respond you as fast as we can</h2>
+{% if action == "contact" %}
+<h1 class="text-success" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Thanks for Contacting Us </h1>
+<h2 class="text-success" style="font-family: Arial, Helvetica, sans-serif;">We will respond you as soon as possible</h2>
+{% endif %}
+{% if action == "checkout" %}
+<h1 class="text-success" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Your order has been placed</h1>
+{% endif %}
 {% endblock %}
