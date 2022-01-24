@@ -44,7 +44,7 @@ height: 100vh !important;
       <div class="card" style="width: 18rem;">
         <img src="{{i.product_image.url}}" class="card-img-top" alt="Chicago Skyscrapers"/>
         <div class="card-body">
-          <h5 class="card-title">{{i.product_name}}</h5>
+          <h5 class="card-title"><a class="btn text-dark" href="prodview/{{i.Product_id}}">{{i.product_name}}</a></h5>
           <p class="card-text">{{i.product_desc}}</p>
         </div>
         <ul class="list-group list-group-flush">
@@ -53,7 +53,7 @@ height: 100vh !important;
         </ul>
         <div class="card-body">
           <div class="row">
-            <div class="col-6"><a href="prodview/{{i.Product_id}}" style="width: 100%;" class="btn btn-danger gradient-custom-2">More</a>
+            <div class="col-6"><a href="checkout/{{i.Product_id}}" style="width: 100%;" class="btn btn-danger gradient-custom-2">Checkout</a>
             </div>
             <div class="col"><a href="#" style="width: 100%;" class="gradient-custom-2 btn btn-danger">buy</a>
             </div>

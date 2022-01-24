@@ -33,7 +33,8 @@ urlpatterns =[
     path('login', views.login, name="login"),
     path('logout',views.logout, name="logout"),
     path('profile/<str:username>',views.profile, name="profile"),
-    path('prodview/<str:ids>', views.productView , name="Productview")
+    path('prodview/<str:ids>', views.productView , name="Productview"),
+    path('checkout/<str:p_id>', views.checkout, name="checkout")
     
     
 

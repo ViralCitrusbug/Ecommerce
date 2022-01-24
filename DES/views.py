@@ -107,3 +107,11 @@ def productView(request, ids) :
         "product" : p
     }
     return render(request , "productview.html",c)
+
+
+def checkout(request, p_id):
+    p =product.objects.filter(Product_id = p_id).first()
+    c = {
+        "product" : p
+    }
+    return render(request, 'checkout.html',c)
