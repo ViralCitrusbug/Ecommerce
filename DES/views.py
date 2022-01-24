@@ -1,4 +1,4 @@
-from math import ceil
+from math import ceil, remainder
 from operator import ipow
 from unicodedata import category
 from webbrowser import get
@@ -100,4 +100,10 @@ def profile(request,username):
         "user" : user
     }
     return render(request, 'profile.html',c)
-    
+
+def productView(request, ids) :
+    p = product.objects.filter(Product_id = ids).first()
+    c = {
+        "product" : p
+    }
+    return render(request , "productview.html",c)

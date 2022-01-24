@@ -32,7 +32,8 @@ urlpatterns =[
     path('forgot',views.forgot,name="forgot"),
     path('login', views.login, name="login"),
     path('logout',views.logout, name="logout"),
-    path('profile/<str:username>',views.profile, name="profile")
+    path('profile/<str:username>',views.profile, name="profile"),
+    path('prodview/<str:ids>', views.productView , name="Productview")
     
     
 

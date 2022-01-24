@@ -1,5 +1,6 @@
 from distutils.command.upload import upload
 from email.policy import default
+from statistics import mode
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -12,7 +13,6 @@ class product(models.Model):
     product_image = models.ImageField(upload_to = 'DES/files')
     product_disc = models.IntegerField()
     product_category = models.CharField(max_length=100)
-
     def __str__(self) :
         return self.product_name
 class contact(models.Model):
