@@ -94,8 +94,8 @@ def logout(r):
     auth.logout(r)
     return redirect('login')
 
-def profile(request):
-    user = User.objects.filter(username = 'aman86').first()
+def profile(request,username):
+    user = User.objects.filter(username = username).first()
     c = {
         "user" : user
     }
