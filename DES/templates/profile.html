@@ -2,15 +2,24 @@
 {% block title %}
 Profile
 {% endblock %}
+{% block css %}
+w100{
+  width : 100%;
+}
+{% endblock %}
 
 {% block body %}
-<h1>{{user}}</h1>
-    <img src="{{user.profile.image.url}}" alt="">
-    <h1>
-    {{user.first_name}}
-    <br>
-    {{user.last_name}}
-    <br>
-    {{user.is_authenticated}}
-  </h1>
+<div class="card" style="width: 18rem;">
+  <img src="{{user.profile.image.url}}" class="card-img-top" alt="...">
+  <a href="" class="btn">Upload image</a>
+  <div class="card-body">
+    <h5 class="card-title">{{user.username}}</h5>
+  
+  <div class="card-body">
+    <div class="row">
+      <a href="" class="btn">Edit Profile</a>
+
+    </div>
+  </div>
+</div>
 {% endblock %}
