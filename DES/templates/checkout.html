@@ -5,6 +5,7 @@ Checkout
 {% block body %}
 <br><br><br><br>
 <div class="container">
+    <h1>Hello, {{request.user.first_name}}</h1>
     <div class="row">
         <div class="col-3">
         </div>
@@ -13,7 +14,11 @@ Checkout
                 <div class="col">
                     <img src="{{product.product_image.url}}" class="img-thumbnail mx-3" alt="...">
                 </div>
-                <div class="col">Hello</div>
+                <div class="col">
+                    <div>
+                        <b><h3>{{product.product_name}}</h3></b>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-3"></div>
