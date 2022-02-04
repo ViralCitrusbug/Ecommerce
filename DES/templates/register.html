@@ -14,40 +14,38 @@ register
                 <p>Please login to your account</p>
         
                 <div class="form-outline mb-4">
-                  <input type="text" id="form2Example11" name="fname"class="form-control" placeholder="Your First Name"/>
+                  <input type="text" id="fname" name="fname"class="form-control" placeholder="Your First Name"/>
                   <label class="form-label"  for="form2Example11">First name</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form2Example11" name="lname"class="form-control" placeholder="Your Last name"/>
+                  <input type="text" id="lname" name="lname"class="form-control" placeholder="Your Last name"/>
                   <label class="form-label"  for="form2Example11">Last name</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form2Example11" name="uname"class="form-control" placeholder="Username"/>
+                  <input type="text" id="uname" name="uname"class="form-control" placeholder="Username"/>
                   <label class="form-label"  for="form2Example11">Username</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form2Example11"name="email" class="form-control" placeholder="Phone number or email address"/>
+                  <input type="email" id="email"name="email" class="form-control" placeholder="Phone number or email address"/>
                   <label class="form-label"  for="form2Example11">Email</label>
                 </div>
         
                 <div class="form-outline mb-4">
-                  <input type="password"  class="form-control" name="pass1" placeholder="Enter your password"/>
+                  <input type="password" id="pass"  class="form-control" name="pass1" placeholder="Enter your password"/>
                   <label class="form-label"  for="form2Example22">Password</label>
                 </div>
         
                 <div class="form-outline mb-4">
-                  <input type="password"  class="form-control"name="pass2" placeholder="Confirm your password" />
-				  {% for m in messages %}
-						<b><font class="text-warning">{{m}}</font></b>
-				  {% endfor %}
+                  <input type="password" id="pass2"  class="form-control"name="pass2" placeholder="Confirm your password" />
+				 
                 </div>
 				
 
                 <div class="text-center pt-1 mb-5 pb-1">
-                  <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register</button>
+                  <button id="register" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register</button>
                 </div>
               </form>
         </div>

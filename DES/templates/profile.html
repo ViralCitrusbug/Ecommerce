@@ -11,7 +11,16 @@ w100{
 {% block body %}
 <div class="card" style="width: 18rem;">
   <img src="{{user.profile.image.url}}" class="card-img-top" alt="...">
-  <a href="" class="btn btn-dark">Upload image</a>
+  <a href="?action=upload_image" id="upload" class="btn btn-dark">Upload image</a>
+  
+  
+  {% if action == "upload_image" %}
+  <div class="input-group mb-3">
+    <input type="file" class="form-control" id="inputGroupFile02">
+   
+  </div>
+  
+  {% endif %}
   <div class="card-body">
     <h5 class="card-title">{{user.username}}</h5>
   </div>

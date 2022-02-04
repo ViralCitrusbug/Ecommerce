@@ -101,8 +101,11 @@ def logout(r):
 
 def profile(request,username):
     user = User.objects.filter(username = username).first()
+    action = request.GET.get('action')
+    print(action)
     c = {
-        "user" : user
+        "user" : user,
+        "action":action
     }
     return render(request, 'profile.html',c)
 
@@ -115,7 +118,7 @@ def productView(request, ids) :
 
 
 def checkout(request, p_id):
-    p =product.objects.filter(Product_id = p_id).first()
+    p =product.objects.filter(product_id = p_id).first()
     price = p.product_price
     discount = p.product_disc
     total = price - (price * (discount/100))
