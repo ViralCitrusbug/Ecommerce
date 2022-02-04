@@ -26,7 +26,7 @@ urlpatterns =[
     path("",views.Home,name="home"),
     path('aboutus',views.aboutus,name="aboutus"),
     path('signin',views.register,name="register"),
-    path('add',views.add,name="add"),
+    path('add/',views.add,name="add"),
     path('contact',views.contactus,name="contactus"),
     path('thank',views.thank,name="thank"),
     path('forgot',views.forgot,name="forgot"),
@@ -34,7 +34,8 @@ urlpatterns =[
     path('logout',views.logout, name="logout"),
     path('profile/<str:username>',views.profile, name="profile"),
     path('prodview/<str:ids>', views.productView , name="Productview"),
-    path('checkout/<str:p_id>', views.checkout, name="checkout")
+    path('checkout/<str:p_id>', views.checkout, name="checkout"),
+    path('order', views.orders , name="orders")
     
     
 

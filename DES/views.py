@@ -50,6 +50,7 @@ def add(request):
         image = request.FILES['img']
         prod = product.objects.create(product_name = name, product_category = category, product_desc = desc, product_price=price, product_disc = disc, product_image = image)
         prod.save()
+        # print(image)
     return render(request,'add.html')
 def thank(r):
     action = r.GET.get('action')
@@ -127,3 +128,7 @@ def checkout(request, p_id):
         "amount" : total
     }
     return render(request, 'checkout.html',c)
+
+
+def orders(request):
+    return render(request , 'orders.html')
